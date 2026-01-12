@@ -87,15 +87,20 @@
 
         .dark-mode .theme-toggle {
             background-color: var(--card-dark);
-            color: var(--text-dark);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1);
+            color: var(--text-dark); /* Agora a lua/sol ficará branca */
         }
 
         .theme-toggle i {
             font-size: 1.5rem;
+            color: var(--secondary); /* Cor padrão (modo claro) */
+        }
+
+        .dark-mode .theme-toggle i {
+            color: var(--text-dark); /* Cor no modo escuro (branco) */
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* WhatsApp Flutuante */
@@ -231,7 +236,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--secondary);
+            color: var(--secondary); /* Cor padrão no modo claro */
             cursor: pointer;
             width: 50px;
             height: 50px;
@@ -242,12 +247,12 @@
             transition: background-color 0.3s;
         }
 
-        .mobile-menu-btn:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+        .dark-mode .mobile-menu-btn {
+            color: var(--text-dark); /* Cor branca no modo escuro */
         }
 
-        .dark-mode .mobile-menu-btn {
-            color: var(--text-dark);
+        .mobile-menu-btn:hover {
+            background-color: rgba(0, 0, 0, 0.05);
         }
 
         .dark-mode .mobile-menu-btn:hover {
@@ -811,6 +816,10 @@
                 color: var(--text-dark);
             }
 
+            .dark-mode .theme-toggle.desktop i {
+                color: var(--text-dark); /* Lua/sol branco no modo escuro */
+            }
+
             .theme-toggle.desktop:hover {
                 transform: scale(1.1);
             }
@@ -974,8 +983,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Crio páginas institucionais que <span>convertem visitantes em clientes</span></h1>
-                    <p>Desenvolvedor FullStack com expertise em React, JavaScript, TypeScript, Python e UI/UX Design. Ajudo empresas e profissionais a construírem sua presença online com sites modernos, responsivos e focados em resultados.</p>
+                    <h1>Páginas institucionais que <span style="color: #000;">convertem</span> <span>visitantes em clientes</span></h1>
+                    <p>Ajudamos empresas e profissionais a construírem sua presença online com sites modernos, responsivos e focados em resultados.</p>
                     <div>
                         <a href="#process" class="btn">SAIBA MAIS</a>
                     </div>
