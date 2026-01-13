@@ -87,16 +87,16 @@
 
         .dark-mode .theme-toggle {
             background-color: var(--card-dark);
-            color: var(--text-dark); /* Agora a lua/sol ficará branca */
+            color: var(--text-dark);
         }
 
         .theme-toggle i {
             font-size: 1.5rem;
-            color: var(--secondary); /* Cor padrão (modo claro) */
+            color: var(--secondary);
         }
 
         .dark-mode .theme-toggle i {
-            color: var(--text-dark); /* Cor no modo escuro (branco) */
+            color: var(--text-dark);
         }
 
         .theme-toggle:hover {
@@ -236,7 +236,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--secondary); /* Cor padrão no modo claro */
+            color: var(--secondary);
             cursor: pointer;
             width: 50px;
             height: 50px;
@@ -248,7 +248,7 @@
         }
 
         .dark-mode .mobile-menu-btn {
-            color: var(--text-dark); /* Cor branca no modo escuro */
+            color: var(--text-dark);
         }
 
         .mobile-menu-btn:hover {
@@ -288,10 +288,20 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
         }
 
         .hero h1 span {
             color: var(--primary);
+        }
+
+        /* CORREÇÃO: Palavra "convertem" fica branca no modo escuro */
+        .hero h1 span[style*="color: #000"] {
+            color: #000;
+        }
+
+        .dark-mode .hero h1 span[style*="color: #000"] {
+            color: var(--text-dark) !important;
         }
 
         .hero p {
@@ -745,7 +755,6 @@
             transition: color 0.3s;
         }
 
-        /* CORREÇÃO: Links do footer em azul no hover para ambos os modos */
         .footer-links a:hover {
             color: var(--primary) !important;
         }
@@ -754,7 +763,6 @@
             color: var(--text-secondary-dark);
         }
 
-        /* Links de contato (telefone, email, localização) mantêm comportamento original */
         .footer-links li i {
             margin-right: 0.5rem;
             width: 20px;
@@ -817,14 +825,13 @@
             }
 
             .dark-mode .theme-toggle.desktop i {
-                color: var(--text-dark); /* Lua/sol branco no modo escuro */
+                color: var(--text-dark);
             }
 
             .theme-toggle.desktop:hover {
                 transform: scale(1.1);
             }
 
-            /* Container para alinhar nav-links e botão de tema no desktop */
             .nav-right {
                 display: flex;
                 align-items: center;
@@ -913,7 +920,6 @@
                 padding: 6px 12px;
             }
             
-            /* Esconder foto do hero em dispositivos móveis */
             .hero-image {
                 display: none;
             }
@@ -922,7 +928,6 @@
                 flex: 1 0 100%;
             }
             
-            /* Esconder botão de tema desktop no mobile */
             .theme-toggle.desktop {
                 display: none;
             }
@@ -959,13 +964,11 @@
                         <li><a href="#contact">Contato</a></li>
                     </ul>
                     
-                    <!-- Botão de tema para desktop (visível apenas em telas grandes) -->
                     <button class="theme-toggle desktop" id="themeToggleDesktop">
                         <i class="fas fa-moon"></i>
                     </button>
                 </div>
                 
-                <!-- Container para mobile (hambúrguer + tema) -->
                 <div class="mobile-menu-container">
                     <button class="theme-toggle" id="themeToggleMobile">
                         <i class="fas fa-moon"></i>
